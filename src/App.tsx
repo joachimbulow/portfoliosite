@@ -15,6 +15,7 @@ import * as ConfigActions from './actions/config';
 import { RootState } from "./reducers";
 import { router } from "./Router";
 
+
 import { Snackbar } from './components/Snackbar';
 
 function App() {
@@ -49,7 +50,7 @@ function App() {
 								color="inherit"
 								noWrap={isMobile}
 							> 
-								Joachim Bülow
+								Have a look around
 							</Typography>
 						</Toolbar>
 					</AppBar>
@@ -69,7 +70,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 		width: "100%",
 		height: "100%",
 		zIndex: 1,
-		overflow: "hidden",
+		overflowX: "hidden",
 	},
 	appFrame: {
 		position: "relative",

@@ -18,8 +18,13 @@ const theme = createMuiTheme({
 			main: "#e41e26",
 			dark: "#a90000",
 			contrastText: "#fff",
-		},
+		},	
 	},
+	typography: {
+		fontFamily: [ 'Lato', 'sans-serif'].join(','),
+	},
+		
+	
 });
 
 export function withRoot(Component: any) {
