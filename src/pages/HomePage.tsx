@@ -1,4 +1,4 @@
-import { Avatar, Card, CardContent, Grid, IconButton, Typography } from '@material-ui/core';
+import { Avatar, Button, Card, CardContent, Divider, Grid, IconButton, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import * as React from 'react';
 import { useSelector } from 'react-redux';
@@ -11,6 +11,9 @@ import avatar from '../assets/images/avatar.png';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import 'animate.css/animate.min.css';
 import { SkillBox } from '../components/SkillBox';
+import '../assets/css/animate.css';
+
+//Images
 import react from '../assets/images/react.png';
 import angular from '../assets/images/angular.png';
 import react_native from '../assets/images/react_native.jpg';
@@ -23,13 +26,6 @@ import nestjs from '../assets/images/nestjs.png';
 import githubactions from '../assets/images/githubactions.png';
 import dockercompose from '../assets/images/dockercompose.jpeg';
 import azure from '../assets/images/azure.png';
-
-
-
-
-
-
-import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 export function HomePage() {
 	const classes = useStyles();
@@ -67,7 +63,10 @@ export function HomePage() {
 												src={avatar}
 											/>
 											<Grid container justify="center" style={{ paddingTop: 20 }}>
-												<Typography variant="body1">Learn more</Typography><ArrowForwardIcon />
+												<Button variant="text">
+													<Typography variant="body1">Learn more</Typography>
+													<ArrowForwardIcon />
+												</Button>
 											</Grid>
 										</Grid>
 									</Grid>
@@ -196,8 +195,7 @@ export function HomePage() {
 							style={{ color: '#f5f5f5', textAlign: 'center', fontStyle: 'italic', fontWeight: 'bold' }}
 						>
 							“If you can get today’s work done today, but you do it in such a way that you can’t possibly
-							get tomorrow’s work done tomorrow, then you lose.” 
-							― Martin Fowler
+							get tomorrow’s work done tomorrow, then you lose.” ― Martin Fowler
 						</Typography>
 						<Typography variant="h4" style={{ color: '#f5f5f5', marginTop: 40 }}>
 							Here are some of my go-to backend technologies
@@ -263,14 +261,13 @@ export function HomePage() {
 				<div className={`${classes.spacer} ${classes.wavesSpacer2}`}></div>
 			</div>
 			<div className={classes.section} style={{ backgroundColor: '#e8f5e9' }}>
-			<Grid container justify="center" alignItems="center">
+				<Grid container justify="center" alignItems="center">
 					<Grid item container justify="center" alignItems="center" xs={10} lg={8}>
 						<Typography
 							variant="h4"
 							style={{ textAlign: 'center', fontStyle: 'italic', fontWeight: 'bold' }}
 						>
-							“The most powerful tool we have as developers is automation.”
-							— Scott Hanselman
+							“The most powerful tool we have as developers is automation.” — Scott Hanselman
 						</Typography>
 						<Typography variant="h4" style={{ marginTop: 40 }}>
 							Here are some of my go-to DevOps technologies
@@ -313,12 +310,24 @@ export function HomePage() {
 						xs={12}
 					>
 						<div style={{ width: 150 }}></div>
-						<SkillBox
-							image={azure}
-							text="Cloud by Microsoft. Gates > Bezos ?"
-						></SkillBox>
+						<SkillBox image={azure} text="Cloud by Microsoft. Gates > Bezos ?"></SkillBox>
 					</Grid>
-					
+				</Grid>
+				<Divider></Divider>
+				<Grid container justify="center" alignItems="center">
+					<Button
+						variant="outlined"
+						size="large"
+						onClick={() => {
+							window.scrollTo({
+								top: 0,
+								behavior: 'smooth',
+							});
+							console.log('scrolled');
+						}}
+					>
+						To top
+					</Button>
 				</Grid>
 			</div>
 		</>
@@ -353,5 +362,8 @@ const useStyles = makeStyles({
 	skillBoxContainer: {
 		marginTop: 30,
 		marginBottom: 30,
+		'&:hover': {
+			transform: 'scale(1.05)',
+		},
 	},
 });
