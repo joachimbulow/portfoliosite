@@ -26,11 +26,15 @@ import nestjs from '../assets/images/nestjs.png';
 import githubactions from '../assets/images/githubactions.png';
 import dockercompose from '../assets/images/dockercompose.jpeg';
 import azure from '../assets/images/azure.png';
+import { useHistory } from 'react-router-dom';
+import { router } from '../Router';
 
 export function HomePage() {
 	const classes = useStyles();
 	const [boxColor, setBoxColor] = React.useState('red');
 	const todoList = useSelector((state: RootState) => state.todoList);
+	const history = useHistory();
+
 
 	const onButtonClick = () => setBoxColor(boxColor === 'red' ? 'blue' : 'red');
 
@@ -63,7 +67,7 @@ export function HomePage() {
 												src={avatar}
 											/>
 											<Grid container justify="center" style={{ paddingTop: 20 }}>
-												<Button variant="text">
+												<Button variant="text" onClick={() => history.push(router.cv().$)}>
 													<Typography variant="body1">Learn more</Typography>
 													<ArrowForwardIcon />
 												</Button>
