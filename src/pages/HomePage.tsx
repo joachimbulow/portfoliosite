@@ -28,6 +28,9 @@ import dockercompose from '../assets/images/dockercompose.jpeg';
 import azure from '../assets/images/azure.png';
 import { useHistory } from 'react-router-dom';
 import { router } from '../Router';
+import { useTrackVisibility } from 'react-intersection-observer-hook';
+
+
 
 export function HomePage() {
 	const classes = useStyles();
@@ -35,6 +38,57 @@ export function HomePage() {
 	const todoList = useSelector((state: RootState) => state.todoList);
 	const history = useHistory();
 
+	//Intersection observers
+	const [
+		ref1,
+		{ isVisible: isVisible1, wasEverVisible: wasEverVisible1},
+	  ] = useTrackVisibility();
+	  const [
+		ref2,
+		{  isVisible: isVisible2, wasEverVisible: wasEverVisible2 },
+	  ] = useTrackVisibility();
+	  const [
+		ref3,
+		{ isVisible: isVisible3, wasEverVisible: wasEverVisible3 },
+	  ] = useTrackVisibility();
+	  const [
+		ref4,
+		{  isVisible: isVisible4, wasEverVisible: wasEverVisible4},
+	  ] = useTrackVisibility();
+	  const [
+		ref5,
+		{ isVisible: isVisible5, wasEverVisible: wasEverVisible5 },
+	  ] = useTrackVisibility();
+	  const [
+		ref6,
+		{ isVisible: isVisible6, wasEverVisible: wasEverVisible6 },
+	  ] = useTrackVisibility();
+	  const [
+		ref7,
+		{   isVisible: isVisible7, wasEverVisible: wasEverVisible7 },
+	  ] = useTrackVisibility();
+	  const [
+		ref8,
+		{  isVisible: isVisible8, wasEverVisible: wasEverVisible8 },
+	  ] = useTrackVisibility();
+	  const [
+		ref9,
+		{  isVisible: isVisible9, wasEverVisible: wasEverVisible9 },
+	  ] = useTrackVisibility();
+	  const [
+		ref10,
+		{   isVisible: isVisible10, wasEverVisible: wasEverVisible10},
+	  ] = useTrackVisibility();
+	  const [
+		ref11,
+		{  isVisible: isVisible11, wasEverVisible: wasEverVisible11 },
+	  ] = useTrackVisibility();
+	  const [
+		ref12,
+		{  isVisible: isVisible12, wasEverVisible: wasEverVisible12 },
+	  ] = useTrackVisibility();
+
+	  //Intersection observers END
 
 	const onButtonClick = () => setBoxColor(boxColor === 'red' ? 'blue' : 'red');
 
@@ -119,12 +173,13 @@ export function HomePage() {
 						</Typography>
 					</Grid>
 					<Grid
-						className={`${classes.skillBoxContainer}`}
+						className={isVisible1 || wasEverVisible1 ? `${classes.skillBoxContainer} animated slideInRight` : `${classes.skillBoxContainer}`}
 						item
 						container
 						justify="center"
 						alignItems="center"
 						xs={12}
+						ref={ref1}
 					>
 						<div style={{ width: 150 }}></div>
 						<SkillBox
@@ -133,12 +188,13 @@ export function HomePage() {
 						></SkillBox>
 					</Grid>
 					<Grid
-						className={classes.skillBoxContainer}
+						className={isVisible2 || wasEverVisible2 ? `${classes.skillBoxContainer} animated slideInLeft` : `${classes.skillBoxContainer}`}
 						item
 						container
 						justify="center"
 						alignItems="center"
 						xs={12}
+						ref={ref2}
 					>
 						<SkillBox
 							image={angular}
@@ -147,12 +203,13 @@ export function HomePage() {
 						<div style={{ width: 150 }}></div>
 					</Grid>
 					<Grid
-						className={classes.skillBoxContainer}
+						className={isVisible3 || wasEverVisible3 ? `${classes.skillBoxContainer} animated slideInRight` : `${classes.skillBoxContainer}`}
 						item
 						container
 						justify="center"
 						alignItems="center"
 						xs={12}
+						ref={ref3}
 					>
 						<div style={{ width: 150 }}></div>
 						<SkillBox
@@ -161,12 +218,13 @@ export function HomePage() {
 						></SkillBox>
 					</Grid>
 					<Grid
-						className={classes.skillBoxContainer}
+						className={isVisible4 || wasEverVisible4 ? `${classes.skillBoxContainer} animated slideInLeft` : `${classes.skillBoxContainer}`}
 						item
 						container
 						justify="center"
 						alignItems="center"
 						xs={12}
+						ref={ref4}
 					>
 						<SkillBox
 							image={flutter}
@@ -175,12 +233,13 @@ export function HomePage() {
 						<div style={{ width: 150 }}></div>
 					</Grid>
 					<Grid
-						className={classes.skillBoxContainer}
+						className={isVisible5 || wasEverVisible5 ? `${classes.skillBoxContainer} animated slideInRight` : `${classes.skillBoxContainer}`}
 						item
 						container
 						justify="center"
 						alignItems="center"
 						xs={12}
+						ref={ref5}
 					>
 						<div style={{ width: 150 }}></div>
 						<SkillBox
@@ -206,12 +265,13 @@ export function HomePage() {
 						</Typography>
 					</Grid>
 					<Grid
-						className={`${classes.skillBoxContainer}`}
+						className={isVisible6 || wasEverVisible6 ? `${classes.skillBoxContainer} animated slideInRight` : `${classes.skillBoxContainer}`}
 						item
 						container
 						justify="center"
 						alignItems="center"
 						xs={12}
+						ref={ref6}
 					>
 						<div style={{ width: 150 }}></div>
 						<SkillBox
@@ -220,12 +280,13 @@ export function HomePage() {
 						></SkillBox>
 					</Grid>
 					<Grid
-						className={classes.skillBoxContainer}
+						className={isVisible7 || wasEverVisible7 ? `${classes.skillBoxContainer} animated slideInLeft` : `${classes.skillBoxContainer}`}
 						item
 						container
 						justify="center"
 						alignItems="center"
 						xs={12}
+						ref={ref7}
 					>
 						<SkillBox
 							image={spring}
@@ -234,12 +295,13 @@ export function HomePage() {
 						<div style={{ width: 150 }}></div>
 					</Grid>
 					<Grid
-						className={classes.skillBoxContainer}
+						className={isVisible8 || wasEverVisible8 ? `${classes.skillBoxContainer} animated slideInRight` : `${classes.skillBoxContainer}`}
 						item
 						container
 						justify="center"
 						alignItems="center"
 						xs={12}
+						ref={ref8}
 					>
 						<div style={{ width: 150 }}></div>
 						<SkillBox
@@ -248,12 +310,13 @@ export function HomePage() {
 						></SkillBox>
 					</Grid>
 					<Grid
-						className={classes.skillBoxContainer}
+						className={isVisible9 || wasEverVisible9 ? `${classes.skillBoxContainer} animated slideInLeft` : `${classes.skillBoxContainer}`}
 						item
 						container
 						justify="center"
 						alignItems="center"
 						xs={12}
+						ref={ref9}
 					>
 						<SkillBox
 							image={mongodb}
@@ -278,12 +341,13 @@ export function HomePage() {
 						</Typography>
 					</Grid>
 					<Grid
-						className={`${classes.skillBoxContainer}`}
+						className={isVisible10 || wasEverVisible10 ? `${classes.skillBoxContainer} animated slideInRight` : `${classes.skillBoxContainer}`}
 						item
 						container
 						justify="center"
 						alignItems="center"
 						xs={12}
+						ref={ref10}
 					>
 						<div style={{ width: 150 }}></div>
 						<SkillBox
@@ -292,47 +356,34 @@ export function HomePage() {
 						></SkillBox>
 					</Grid>
 					<Grid
-						className={classes.skillBoxContainer}
+						className={isVisible11 || wasEverVisible11 ? `${classes.skillBoxContainer} animated slideInLeft` : `${classes.skillBoxContainer}`}
 						item
 						container
 						justify="center"
 						alignItems="center"
 						xs={12}
+						ref={ref11}
 					>
 						<SkillBox
 							image={githubactions}
-							text="A CI/CD pipeline service that inegrates really well with my favorite version control servers: GitHub."
+							text="A CI/CD pipeline service that integrates really well with my favorite version control servers: GitHub."
 						></SkillBox>
 						<div style={{ width: 150 }}></div>
 					</Grid>
 					<Grid
-						className={classes.skillBoxContainer}
+						className={isVisible12 || wasEverVisible12 ? `${classes.skillBoxContainer} animated slideInRight` : `${classes.skillBoxContainer}`}
 						item
 						container
 						justify="center"
 						alignItems="center"
 						xs={12}
+						ref={ref12}
 					>
 						<div style={{ width: 150 }}></div>
 						<SkillBox image={azure} text="Cloud by Microsoft. Gates > Bezos ?"></SkillBox>
 					</Grid>
 				</Grid>
 				<Divider></Divider>
-				<Grid container justify="center" alignItems="center">
-					<Button
-						variant="outlined"
-						size="large"
-						onClick={() => {
-							window.scrollTo({
-								top: 0,
-								behavior: 'smooth',
-							});
-							console.log('scrolled');
-						}}
-					>
-						To top
-					</Button>
-				</Grid>
 			</div>
 		</>
 	);
