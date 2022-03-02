@@ -36,7 +36,7 @@ class Resume extends Component {
         <div id="about">
           <div>
             <div id="profile-image">
-              <img src={this.props.profileImage} />
+              <img src={this.props.profileImage} alt="profile_image"/>
             </div>
             <div>
               <h2>

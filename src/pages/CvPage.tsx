@@ -1,4 +1,4 @@
-import { Button, Grid, Typography } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import { Theme } from "@material-ui/core/styles";
 import { makeStyles } from "@material-ui/styles";
 import * as React from "react";
@@ -6,13 +6,12 @@ import Resume from "../components/cv/Resume";
 import profileImage from '../assets/images/avatar.png'
 
 export function CvPage() {
-    const classes = useStyles();
 
     return (
         <Grid container alignItems="center" justify="center">
             <Resume
                 name="Joachim Henrik Bülow"
-                firstName="Tony"
+                firstName="Joachim"
                 tel="+45 50403935"
                 email="joachimbulow@hotmail.dk"
                 address="Odense, Denmark"

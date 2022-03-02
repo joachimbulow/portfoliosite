@@ -56,15 +56,21 @@ function Content() {
 		<div>
 			<div className={classes.drawerHeader}>
 				<Grid container justify="center">
-					{randomValue < 0.33 && 
-					<Typography>Fly me to the moon 🚀</Typography>
-					}
-					{randomValue > 0.66 && 
-					<Typography>Take me home 🏞️</Typography>
-					}
-					{(0.66 > randomValue && randomValue > 0.33) && 
-					<Typography>6 feet under ⚰️ </Typography>
-					}
+					{randomValue < 0.33 && (
+						<Typography>
+							Fly me to the moon <span role="img">🚀</span>
+						</Typography>
+					)}
+					{randomValue > 0.66 && (
+						<Typography>
+							Take me home <span role="img">🏞️</span>
+						</Typography>
+					)}
+					{0.66 > randomValue && randomValue > 0.33 && (
+						<Typography>
+							6 feet under<span role="img">⚰️</span>{' '}
+						</Typography>
+					)}
 				</Grid>
 			</div>
 			<Divider />
@@ -105,7 +111,7 @@ function TodoIcon(props: { todoList: Todo[] }) {
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme: Theme) => ({
-	drawerHeader: { marginTop: 25, marginBottom: 25},
+	drawerHeader: { marginTop: 25, marginBottom: 25 },
 	drawerPaper: {
 		width: 250,
 		backgroundColor: theme.palette.background.default,

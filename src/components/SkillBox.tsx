@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Avatar, Card, CardContent, CardMedia, Grid, Typography } from '@material-ui/core';
+import { Avatar, Card, CardContent, Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 interface Props {

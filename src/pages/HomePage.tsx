@@ -1,10 +1,7 @@
-import { Avatar, Button, Card, CardContent, Divider, Grid, IconButton, Typography } from '@material-ui/core';
+import { Avatar, Button, Card, CardContent, Divider, Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import * as React from 'react';
-import { useSelector } from 'react-redux';
-import { RootState } from '../reducers/index';
 import layeredPeaks from '../assets/svgs/layered-peaks.svg';
-import cloud from '../assets/svgs/cloud.svg';
 import waves from '../assets/svgs/waves.svg';
 import waves2 from '../assets/svgs/waves2.svg';
 import avatar from '../assets/images/avatar.png';
@@ -30,67 +27,25 @@ import { useHistory } from 'react-router-dom';
 import { router } from '../Router';
 import { useTrackVisibility } from 'react-intersection-observer-hook';
 
-
-
 export function HomePage() {
 	const classes = useStyles();
-	const [boxColor, setBoxColor] = React.useState('red');
-	const todoList = useSelector((state: RootState) => state.todoList);
 	const history = useHistory();
 
 	//Intersection observers
-	const [
-		ref1,
-		{ isVisible: isVisible1, wasEverVisible: wasEverVisible1},
-	  ] = useTrackVisibility();
-	  const [
-		ref2,
-		{  isVisible: isVisible2, wasEverVisible: wasEverVisible2 },
-	  ] = useTrackVisibility();
-	  const [
-		ref3,
-		{ isVisible: isVisible3, wasEverVisible: wasEverVisible3 },
-	  ] = useTrackVisibility();
-	  const [
-		ref4,
-		{  isVisible: isVisible4, wasEverVisible: wasEverVisible4},
-	  ] = useTrackVisibility();
-	  const [
-		ref5,
-		{ isVisible: isVisible5, wasEverVisible: wasEverVisible5 },
-	  ] = useTrackVisibility();
-	  const [
-		ref6,
-		{ isVisible: isVisible6, wasEverVisible: wasEverVisible6 },
-	  ] = useTrackVisibility();
-	  const [
-		ref7,
-		{   isVisible: isVisible7, wasEverVisible: wasEverVisible7 },
-	  ] = useTrackVisibility();
-	  const [
-		ref8,
-		{  isVisible: isVisible8, wasEverVisible: wasEverVisible8 },
-	  ] = useTrackVisibility();
-	  const [
-		ref9,
-		{  isVisible: isVisible9, wasEverVisible: wasEverVisible9 },
-	  ] = useTrackVisibility();
-	  const [
-		ref10,
-		{   isVisible: isVisible10, wasEverVisible: wasEverVisible10},
-	  ] = useTrackVisibility();
-	  const [
-		ref11,
-		{  isVisible: isVisible11, wasEverVisible: wasEverVisible11 },
-	  ] = useTrackVisibility();
-	  const [
-		ref12,
-		{  isVisible: isVisible12, wasEverVisible: wasEverVisible12 },
-	  ] = useTrackVisibility();
+	const [ref1, { isVisible: isVisible1, wasEverVisible: wasEverVisible1 }] = useTrackVisibility();
+	const [ref2, { isVisible: isVisible2, wasEverVisible: wasEverVisible2 }] = useTrackVisibility();
+	const [ref3, { isVisible: isVisible3, wasEverVisible: wasEverVisible3 }] = useTrackVisibility();
+	const [ref4, { isVisible: isVisible4, wasEverVisible: wasEverVisible4 }] = useTrackVisibility();
+	const [ref5, { isVisible: isVisible5, wasEverVisible: wasEverVisible5 }] = useTrackVisibility();
+	const [ref6, { isVisible: isVisible6, wasEverVisible: wasEverVisible6 }] = useTrackVisibility();
+	const [ref7, { isVisible: isVisible7, wasEverVisible: wasEverVisible7 }] = useTrackVisibility();
+	const [ref8, { isVisible: isVisible8, wasEverVisible: wasEverVisible8 }] = useTrackVisibility();
+	const [ref9, { isVisible: isVisible9, wasEverVisible: wasEverVisible9 }] = useTrackVisibility();
+	const [ref10, { isVisible: isVisible10, wasEverVisible: wasEverVisible10 }] = useTrackVisibility();
+	const [ref11, { isVisible: isVisible11, wasEverVisible: wasEverVisible11 }] = useTrackVisibility();
+	const [ref12, { isVisible: isVisible12, wasEverVisible: wasEverVisible12 }] = useTrackVisibility();
 
-	  //Intersection observers END
-
-	const onButtonClick = () => setBoxColor(boxColor === 'red' ? 'blue' : 'red');
+	//Intersection observers END
 
 	return (
 		<>
@@ -173,7 +128,11 @@ export function HomePage() {
 						</Typography>
 					</Grid>
 					<Grid
-						className={isVisible1 || wasEverVisible1 ? `${classes.skillBoxContainer} animated slideInRight` : `${classes.skillBoxContainer}`}
+						className={
+							isVisible1 || wasEverVisible1
+								? `${classes.skillBoxContainer} animated slideInRight`
+								: `${classes.skillBoxContainer}`
+						}
 						item
 						container
 						justify="center"
@@ -188,7 +147,11 @@ export function HomePage() {
 						></SkillBox>
 					</Grid>
 					<Grid
-						className={isVisible2 || wasEverVisible2 ? `${classes.skillBoxContainer} animated slideInLeft` : `${classes.skillBoxContainer}`}
+						className={
+							isVisible2 || wasEverVisible2
+								? `${classes.skillBoxContainer} animated slideInLeft`
+								: `${classes.skillBoxContainer}`
+						}
 						item
 						container
 						justify="center"
@@ -203,7 +166,11 @@ export function HomePage() {
 						<div style={{ width: 150 }}></div>
 					</Grid>
 					<Grid
-						className={isVisible3 || wasEverVisible3 ? `${classes.skillBoxContainer} animated slideInRight` : `${classes.skillBoxContainer}`}
+						className={
+							isVisible3 || wasEverVisible3
+								? `${classes.skillBoxContainer} animated slideInRight`
+								: `${classes.skillBoxContainer}`
+						}
 						item
 						container
 						justify="center"
@@ -218,7 +185,11 @@ export function HomePage() {
 						></SkillBox>
 					</Grid>
 					<Grid
-						className={isVisible4 || wasEverVisible4 ? `${classes.skillBoxContainer} animated slideInLeft` : `${classes.skillBoxContainer}`}
+						className={
+							isVisible4 || wasEverVisible4
+								? `${classes.skillBoxContainer} animated slideInLeft`
+								: `${classes.skillBoxContainer}`
+						}
 						item
 						container
 						justify="center"
@@ -233,7 +204,11 @@ export function HomePage() {
 						<div style={{ width: 150 }}></div>
 					</Grid>
 					<Grid
-						className={isVisible5 || wasEverVisible5 ? `${classes.skillBoxContainer} animated slideInRight` : `${classes.skillBoxContainer}`}
+						className={
+							isVisible5 || wasEverVisible5
+								? `${classes.skillBoxContainer} animated slideInRight`
+								: `${classes.skillBoxContainer}`
+						}
 						item
 						container
 						justify="center"
@@ -265,7 +240,11 @@ export function HomePage() {
 						</Typography>
 					</Grid>
 					<Grid
-						className={isVisible6 || wasEverVisible6 ? `${classes.skillBoxContainer} animated slideInRight` : `${classes.skillBoxContainer}`}
+						className={
+							isVisible6 || wasEverVisible6
+								? `${classes.skillBoxContainer} animated slideInRight`
+								: `${classes.skillBoxContainer}`
+						}
 						item
 						container
 						justify="center"
@@ -280,7 +259,11 @@ export function HomePage() {
 						></SkillBox>
 					</Grid>
 					<Grid
-						className={isVisible7 || wasEverVisible7 ? `${classes.skillBoxContainer} animated slideInLeft` : `${classes.skillBoxContainer}`}
+						className={
+							isVisible7 || wasEverVisible7
+								? `${classes.skillBoxContainer} animated slideInLeft`
+								: `${classes.skillBoxContainer}`
+						}
 						item
 						container
 						justify="center"
@@ -295,7 +278,11 @@ export function HomePage() {
 						<div style={{ width: 150 }}></div>
 					</Grid>
 					<Grid
-						className={isVisible8 || wasEverVisible8 ? `${classes.skillBoxContainer} animated slideInRight` : `${classes.skillBoxContainer}`}
+						className={
+							isVisible8 || wasEverVisible8
+								? `${classes.skillBoxContainer} animated slideInRight`
+								: `${classes.skillBoxContainer}`
+						}
 						item
 						container
 						justify="center"
@@ -310,7 +297,11 @@ export function HomePage() {
 						></SkillBox>
 					</Grid>
 					<Grid
-						className={isVisible9 || wasEverVisible9 ? `${classes.skillBoxContainer} animated slideInLeft` : `${classes.skillBoxContainer}`}
+						className={
+							isVisible9 || wasEverVisible9
+								? `${classes.skillBoxContainer} animated slideInLeft`
+								: `${classes.skillBoxContainer}`
+						}
 						item
 						container
 						justify="center"
@@ -341,7 +332,11 @@ export function HomePage() {
 						</Typography>
 					</Grid>
 					<Grid
-						className={isVisible10 || wasEverVisible10 ? `${classes.skillBoxContainer} animated slideInRight` : `${classes.skillBoxContainer}`}
+						className={
+							isVisible10 || wasEverVisible10
+								? `${classes.skillBoxContainer} animated slideInRight`
+								: `${classes.skillBoxContainer}`
+						}
 						item
 						container
 						justify="center"
@@ -356,7 +351,11 @@ export function HomePage() {
 						></SkillBox>
 					</Grid>
 					<Grid
-						className={isVisible11 || wasEverVisible11 ? `${classes.skillBoxContainer} animated slideInLeft` : `${classes.skillBoxContainer}`}
+						className={
+							isVisible11 || wasEverVisible11
+								? `${classes.skillBoxContainer} animated slideInLeft`
+								: `${classes.skillBoxContainer}`
+						}
 						item
 						container
 						justify="center"
@@ -371,7 +370,11 @@ export function HomePage() {
 						<div style={{ width: 150 }}></div>
 					</Grid>
 					<Grid
-						className={isVisible12 || wasEverVisible12 ? `${classes.skillBoxContainer} animated slideInRight` : `${classes.skillBoxContainer}`}
+						className={
+							isVisible12 || wasEverVisible12
+								? `${classes.skillBoxContainer} animated slideInRight`
+								: `${classes.skillBoxContainer}`
+						}
 						item
 						container
 						justify="center"
